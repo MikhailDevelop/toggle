@@ -1,0 +1,97 @@
+      <td><a href="#">I</a></td>
+                         <div class="block_Iam">
+                            <td class="Iam"><a href="#">I&nbsp<span>am</span></a>
+                                <div class="overflow_Iam">
+                                    <div class="close_Iam">close</div>
+                                    <div class="item">love</div>
+                                    <div class="item">love</div>
+                                    <div class="item">love</div>
+                                    <div class="love">
+                                        less
+                                    </div>   
+                                </div>
+                                <!-- <div class="clos">love</div> -->
+                                
+                            </td>
+                        </div>
+      
+      
+      <style>
+                              .overflow_Iam {
+                                display: none;
+                                width: 186px;
+                                height: 116px;
+                                background-color: rgba(255, 214, 170, 0.84);
+                                position: absolute;
+                                margin-left: 0px;
+                                border: 2px solid rgb(252, 192, 126);
+                                margin-top: 20px;
+                              }
+                             .overflow_Iam > .item {
+                                padding: 10px 0;
+                                border-bottom: 2px solid rgb(252, 192, 126);
+                              }
+                             .overflow_Iam > .close_Iam {
+                                display: block;
+                                position: absolute;
+                                /* float: right; */
+                                /* position: absolute; */
+                                text-align: right;
+                              }
+
+                              .love {
+                                width: 183px;
+                                background-color: red;
+                                position: absolute;
+                              }
+
+                              .love > .x {
+                                content:'x';
+                                position: absolute;
+                                width: 10px;
+                                height: 10px;
+                                background-color: black;
+                              }
+                            </style>
+                            
+                            
+                            
+                            
+                            
+                            var overflow1 = document.getElementsByClassName('love')[0];
+                                var overflow_Iam = document.getElementsByClassName('overflow_Iam')[0];
+                                var modal_ov = document.getElementsByClassName('item')[0];
+                                var close_r = document.getElementsByClassName('close_Iam')[0];
+
+                                var btn = document.getElementsByClassName('Iam')[0].onclick = function(event) {
+                                    overflow_Iam.style.display='block';
+                                    overflow_Iam.style.position='absolute';
+
+                                    var toggle = document.createElement('div');
+                                    var toggleCl = toggle.classList.add('toggle');
+                                    console.log(toggle);
+
+                                    
+                                    overflow_Iam.classList.toggle('toggle');// toggle
+                                     var cl_search = document.querySelector('.toggle');
+                                     
+                                    //из-за этой части не отображается toggle 
+                                     if(cl_search.classList.toggle('toggle')) {
+                                         cl_search.innerHTML= `<div>${overflow_Iam}</div>`;
+                                         cl_search.classList.add('love');
+                                         //create div
+                                         var cr_div = document.createElement('div');
+                                         var cr_cl_div = cr_div.classList.add('createDiv');
+                                         var cr_div_inner = cr_div.innerHTML = `<div>${cl_div}</div>`;
+                                         console.log(cr_div);
+                                         console.log(cl_search);
+                                     }
+                                    //end 
+                                     
+                                     console.log(cl_search);
+                                     overflow_Iam.innerHTML='TEST';
+
+                                     close_r.onclick = function(event) {
+                                      overflow.style.display='none';
+                                  }  
+                                }
